@@ -25,6 +25,7 @@ Este projeto implementa um pipeline para **previsão de tráfego** e **controle 
   Aplica o fuzzy usando a previsão da LSTM e calcula controle **sequencial**:
   - Geração do verde desejado pelo fuzzy: `G_fuzzy(t)`
   - Atualização sequencial:
+    
     $$\Delta G(t) = \text{clip}(G_{fuzzy}(t) - G_{prev}(t-1), \pm \Delta G_{max})$$
     
     $$G_{prev}(t) = \text{clip}(G_{prev}(t-1) + \Delta G(t), [G_{min}, G_{max}])$$
