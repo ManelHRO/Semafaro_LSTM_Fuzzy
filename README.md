@@ -14,3 +14,21 @@ Este projeto implementa um pipeline para **previsão de tráfego** e **controle 
   Versão ajustada para aceitar `--weight_decay` e `--grad_clip`.
 
 - `model.py`
+  Define a arquitetura `LSTMRegressor`.
+
+- `data_module.py`
+  Prepara o dataset: ordena por tempo, cria features, define targets, cria janelas (lookback),
+  padroniza (z-score) e faz split temportal (train/val/test).
+
+### Controle Fuzzy
+- `fuzzy_controller.py`  
+  Aplica o fuzzy usando a previsão da LSTM e calcula controle **sequencial**:
+  - Geração do verde desejado pelo fuzzy: `G_fuzzy(t)`
+  - Atualização sequencial:
+    \[
+      \Delta G(t)=clip(G_{fuzzy}(t)-G_{prev}(t-1), \pm \Delta G_{max})
+    \]
+    \[
+      G_{prev}(t)=clip(G_{prev}(t-1)+\Delta G(t), [G_{min}, G_{max}])
+    \]
+  - Exporta `saida_fuzzy_seq.csv` com real/pred e sinais de controle.
