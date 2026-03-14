@@ -1,2 +1,1 @@
-# Ajuste Dinamico de Tempos Semaf ˆ oricos usando Previs ´ ao de ˜
-Trafego e Controle Fuzzy Sequencial 
+# Ajuste Dinâmico de Tempos Semafóricos usando Previsão de Tráfego e Controle Fuzzy Sequencial
