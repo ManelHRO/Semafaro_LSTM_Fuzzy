@@ -138,7 +138,6 @@ def load_and_prepare(
         if col in df.columns:
             df = df.drop(columns=[col])
 
-    # Optional: drop Traffic_Condition (often derived)
     if drop_traffic_condition and "Traffic_Condition" in df.columns:
         df = df.drop(columns=["Traffic_Condition"])
 
@@ -154,7 +153,6 @@ def load_and_prepare(
     # Coerce numeric and drop NaN
     df = _coerce_numeric_and_dropna(df)
 
-    # Optional smoothing for targets (create new target columns, keep raw as inputs)
     target_cols = RAW_TARGETS
     if target_smooth_window and int(target_smooth_window) > 1:
         w = int(target_smooth_window)
