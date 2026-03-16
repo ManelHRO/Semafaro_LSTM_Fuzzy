@@ -51,7 +51,7 @@ A amostragem é a cada **5 minutos**.
 
 ---
 
-## 3) Targets suavizados (caminho 2)
+## 3) Targets suavizados
 
 Para aumentar previsibilidade, os alvos são definidos como **média móvel retroativa** (trailing):
 
