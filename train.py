@@ -1,5 +1,4 @@
 # train.py
-# Same trainer as v4, but with --target_smooth_window support.
 import os
 import math
 import argparse
