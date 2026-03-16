@@ -53,12 +53,9 @@ e produz um verde desejado:
 ### 1.4 Controle sequencial (ΔG com histerese)
 Para evitar mudanças abruptas no semáforo, o controle é aplicado de forma *sequencial*, usando o verde do ciclo anterior:
 
-\[
-\Delta G(t)=clip(G_{fuzzy}(t)-G_{prev}(t-1), \pm \Delta G_{max})
-\]
-\[
-G_{prev}(t)=clip(G_{prev}(t-1)+\Delta G(t), [G_{min}, G_{max}])
-\]
+$$\Delta G(t)=clip(G_{fuzzy}(t)-G_{prev}(t-1), \pm \Delta G_{max})$$
+
+$$G_{prev}(t)=clip(G_{prev}(t-1)+\Delta G(t), [G_{min}, G_{max}])$$
 
 Isso:
 - aumenta estabilidade,
